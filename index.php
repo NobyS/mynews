@@ -39,8 +39,6 @@ If (count($_POST)>0)
 {
     $cat = "entertainment";
 }
-echo "<br>";
-
 echo '
 <div class="panel panel-info">
       <div class="panel-heading">
@@ -48,8 +46,6 @@ echo '
       </div>
     
 </div>';
-
-
 
 
 $api = "7c496bf13fa54708aba065e72e3ee6c9";
