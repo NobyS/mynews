@@ -41,6 +41,17 @@ If (count($_POST)>0)
 }
 echo "<br>";
 
+echo '
+<div class="panel panel-info">
+      <div class="panel-heading">
+            <h3 class="panel-title">Gewählte Kategorie: '.$cat. '</h3>
+      </div>
+    
+</div>';
+
+
+
+
 $api = "7c496bf13fa54708aba065e72e3ee6c9";
 $country = "country=de";
 $pagesize= "pagesize=20";
@@ -69,3 +80,4 @@ foreach ($result->articles as $article) { ?>
 </div>   
 </body>
 </html>
+
