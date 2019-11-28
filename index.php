@@ -16,18 +16,27 @@
                     <h3 class="panel-title">Aktuelle Nachrichten ansehen!</h3>
             </div>
             <div class="panel-body">
-            <form action="" method="post">
-                <select name="category">
+ <form action="" method="post">
+<div class="row">
+    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+    <select name="category">
                     <option value="business">Geschäft</option>
                     <option value="entertainment">Entertainment</option>
                     <option value="health">Gesundheit</option>
                     <option value="science">Szene</option>
                     <option value="sports">Sports</option>
                     <option value="technology">Technology</option>
-                </select>
-                <br>
-                <br>
-                <input type="submit">
+                </select> 
+    </div>
+    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+        
+        <input type="text" name="categori" id="categori" class="form-control" placeholder="Suchen...." >
+        
+        </div>
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+        <input type="submit">
+        </div>
+</div>            
         </form>
             </div>
         </div>
@@ -35,6 +44,7 @@
 If (count($_POST)>0)
 {
     $cat = $_POST['category'];
+    $cat1 = $_POST['categori'];
 }else
 {
     $cat = "entertainment";
@@ -52,8 +62,16 @@ $api = "7c496bf13fa54708aba065e72e3ee6c9";
 $country = "country=de";
 $pagesize= "pagesize=20";
 
+if (strlen($cat1)>0)
+{
+    $ch = curl_init("https://newsapi.org/v2/top-headlines?$country&apiKey=$api&q=$cat1&$pagesize");
+}else
+{
+    $ch = curl_init("https://newsapi.org/v2/top-headlines?$country&apiKey=$api&category=$cat&$pagesize");
+}
 
-$ch = curl_init("https://newsapi.org/v2/top-headlines?$country&apiKey=$api&category=$cat&$pagesize");
+
+
 
 
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
