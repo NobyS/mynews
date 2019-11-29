@@ -30,7 +30,7 @@
     </div>
     <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
         
-        <input type="text" name="categori" id="categori" class="form-control" placeholder="Suchen...." >
+        <input type="text" name="categori" id="categori" value="" class="form-control" placeholder="Suchen...." >
         
         </div>
         <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
@@ -41,10 +41,11 @@
             </div>
         </div>
 <?
+
 If (count($_POST)>0)
 {
     $cat = $_POST['category'];
-    $cat1 = $_POST['categori'];
+    $cat1 = ($_POST['categori']);
 }else
 {
     $cat = "entertainment";
@@ -62,9 +63,12 @@ $api = "7c496bf13fa54708aba065e72e3ee6c9";
 $country = "country=de";
 $pagesize= "pagesize=20";
 
+
+
 if (strlen($cat1)>0)
 {
-    $ch = curl_init("https://newsapi.org/v2/top-headlines?$country&apiKey=$api&q=$cat1&$pagesize");
+    $s = "q=".$cat1;
+    $ch = curl_init("https://newsapi.org/v2/everything?$s&apiKey=$api&$pagesize&language=de");
 }else
 {
     $ch = curl_init("https://newsapi.org/v2/top-headlines?$country&apiKey=$api&category=$cat&$pagesize");
