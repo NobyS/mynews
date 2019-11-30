@@ -15,7 +15,7 @@ session_start();
 
 
   
-    $_logindaten = ARRAY("name"=>"admin", "passwort"=>"12345");
+    $_logindaten = ARRAY("name"=>"admin", "passwort"=>"!%!Admin12345");
 
     if (isset($_POST["loginname"]) && isset($_POST["loginpasswort"]))
         {
