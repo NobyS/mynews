@@ -1,3 +1,30 @@
+<?php
+session_start();
+    if (!isset($_SESSION["login"]))
+    {
+        $_SESSION["login"]=0;
+    }
+
+    $_logindaten = ARRAY("name"=>"admin", "passwort"=>"12345");
+
+    if (isset($_POST["loginname"]) && isset($_POST["loginpasswort"]))
+        {
+        if ($_logindaten["name"] == $_POST["loginname"] &&
+            $_logindaten["passwort"] == $_POST["loginpasswort"])
+            {
+            # Userdaten korrekt - User ist eingeloggt
+            # Login merken !
+            $_SESSION["login"] = 1;
+            }
+        }
+
+    if ($_SESSION["login"] != 1)
+        {
+        include("login.php");
+        exit;
+        }
+?>
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -35,6 +62,7 @@
         </div>
         <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
         <input type="submit">
+
         </div>
 </div>            
         </form>
