@@ -4,7 +4,17 @@ session_start();
     {
         $_SESSION["login"]=0;
     }
+    if (!isset($_SESSION["expire"]))
+    {
+        $_SESSION["expire"]=0;
+    }
+    if (!isset($now))
+    {
+        $now = time();;
+    }
 
+
+  
     $_logindaten = ARRAY("name"=>"admin", "passwort"=>"12345");
 
     if (isset($_POST["loginname"]) && isset($_POST["loginpasswort"]))
@@ -12,9 +22,15 @@ session_start();
         if ($_logindaten["name"] == $_POST["loginname"] &&
             $_logindaten["passwort"] == $_POST["loginpasswort"])
             {
+              
+                $_SESSION['expire'] =0;
             # Userdaten korrekt - User ist eingeloggt
             # Login merken !
             $_SESSION["login"] = 1;
+            $_SESSION['start'] = time(); // Taking now logged in time.
+            // Ending a session in 30 minutes from the starting time.
+            $_SESSION['expire'] = $_SESSION['start'] + (5 * 60);
+            echo '<a href="logout.php">Logout</a>';
             }
         }
 
@@ -23,6 +39,14 @@ session_start();
         include("login.php");
         exit;
         }
+        if ($now > $_SESSION['expire']) {
+            session_destroy();
+            die('Your session has expired! <a href="login.php">Login here</a>');
+            
+        }
+
+
+
 ?>
 
 <!DOCTYPE html>
