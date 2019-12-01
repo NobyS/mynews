@@ -147,7 +147,7 @@ foreach ($result->articles as $article) { ?>
     
 </div>
 <?php
-echo getenv();
+echo getenv('PW');
 }
 ?>
 <body>
