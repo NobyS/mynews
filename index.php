@@ -13,9 +13,11 @@ session_start();
         $now = time();;
     }
 
+    
 
+   
   
-    $_logindaten = ARRAY("name"=>"admin", "passwort"=>"!%!Admin12345");
+    $_logindaten = ARRAY("name"=>"admin", "passwort"=>"54321");
 
     if (isset($_POST["loginname"]) && isset($_POST["loginpasswort"]))
         {
@@ -33,6 +35,7 @@ session_start();
             echo '<a href="logout.php">Logout</a>';
             }
         }
+        
 
     if ($_SESSION["login"] != 1)
         {
@@ -144,6 +147,7 @@ foreach ($result->articles as $article) { ?>
     
 </div>
 <?php
+echo getenv();
 }
 ?>
 <body>
