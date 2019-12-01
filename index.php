@@ -17,7 +17,7 @@ session_start();
 
    
   
-    $_logindaten = ARRAY("name"=>"admin", "passwort"=>"54321");
+    $_logindaten = ARRAY("name"=>"admin", "passwort"=>getenv('PW'));
 
     if (isset($_POST["loginname"]) && isset($_POST["loginpasswort"]))
         {
@@ -147,7 +147,7 @@ foreach ($result->articles as $article) { ?>
     
 </div>
 <?php
-echo getenv('PW');
+
 }
 ?>
 <body>
