@@ -121,9 +121,9 @@ $pagesize= "pagesize=20";
 
 if (strlen($cat1)>0)
 {
-    $s = $cat1;
+    $s1 = $cat1;
     $url = 'https://newsapi.org/v2/everything?q=" %s "&apiKey=$api&$pagesize&language=de';
-    $url1 = sprintf($url,$cat1);
+    $url1 = sprintf($url,$s1);
     
 
     $ch = curl_init($url1);
