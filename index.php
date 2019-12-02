@@ -123,7 +123,16 @@ $pagesize= "pagesize=20";
 if (strlen($cat1)>0)
 {
     $s = $cat1;
-    $ch = curl_init('https://newsapi.org/v2/everything?q='.$s.'&apiKey=$api&$pagesize&language=de');
+    $ch = curl_init('https://newsapi.org/v2/everything?q=$s&apiKey=$api&$pagesize&language=de');
+    if(!curl_errno($ch))
+    {
+        $info = curl_getinfo($ch);
+    
+        echo 'Es wurden ' . $info['total_time'] . ' Sekunden benötigt für einen Request an ' . $info['url'];
+    }
+    
+
+
 }else
 {
     $ch = curl_init("https://newsapi.org/v2/top-headlines?$country&apiKey=$api&category=$cat&$pagesize");
