@@ -115,22 +115,15 @@ echo '
 
 $api = "7c496bf13fa54708aba065e72e3ee6c9";
 $country = "country=de";
-$pagesize= "pagesize=20";
+$pagesize= "pagesize=25";
 
 
 
 if (strlen($cat1)>0)
 {
-    $s1 = $cat1;
-    $url = 'https://newsapi.org/v2/everything?q=" %s "&apiKey=$api&$pagesize&language=de';
-    $url1 = sprintf($url,$s1);
-    
+    $s = $cat1;
 
-    $ch = curl_init($url1);
-   
-    
-
-
+    $ch = curl_init("https://newsapi.org/v2/everything?q=$s&apiKey=$api&$pagesize&language=de");
 }else
 {
     $ch = curl_init("https://newsapi.org/v2/top-headlines?$country&apiKey=$api&category=$cat&$pagesize");
