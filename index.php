@@ -122,7 +122,7 @@ $pagesize= "pagesize=20";
 if (strlen($cat1)>0)
 {
     $s = $cat1;
-    $url = 'https://newsapi.org/v2/everything?q= %s &apiKey=$api&$pagesize&language=de';
+    $url = 'https://newsapi.org/v2/everything?q=" %s "&apiKey=$api&$pagesize&language=de';
     $url1 = sprintf($url,$cat1);
     
 
