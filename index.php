@@ -59,7 +59,6 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Aktuelle Nachrichten ansehen!</title>
-    <link rel="stylesheet" href="vendor/twitter/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
@@ -124,12 +123,7 @@ if (strlen($cat1)>0)
 {
     $s = $cat1;
     $ch = curl_init("https://newsapi.org/v2/everything?q=$s&apiKey=$api&$pagesize&language=de");
-    if(!curl_errno($ch))
-    {
-        $info = curl_getinfo($ch);
-    
-        echo 'Es wurden ' . $info['total_time'] . ' Sekunden benötigt für einen Request an ' . $info['url'];
-    }
+   
     
 
 
@@ -143,6 +137,7 @@ if (strlen($cat1)>0)
 
 
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+
 $result = curl_exec($ch);
 $result = json_decode($result);
 //var_dump($result);
