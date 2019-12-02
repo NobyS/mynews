@@ -123,7 +123,7 @@ $pagesize= "pagesize=20";
 if (strlen($cat1)>0)
 {
     $s = $cat1;
-    $ch = curl_init('https://newsapi.org/v2/everything?q='."$s".'&apiKey=$api&$pagesize&language=de');
+    $ch = curl_init('https://newsapi.org/v2/everything?q='.$s.'&apiKey=$api&$pagesize&language=de');
 }else
 {
     $ch = curl_init("https://newsapi.org/v2/top-headlines?$country&apiKey=$api&category=$cat&$pagesize");
