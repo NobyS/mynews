@@ -137,7 +137,7 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 
 $result = curl_exec($ch);
 $result = json_decode($result);
-//var_dump($result);
+var_dump($result);
 foreach ($result->articles as $article) { ?>
 
 <div class="row">
