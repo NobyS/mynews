@@ -10,30 +10,34 @@
 <body>
 
 <div class="container">
-    
 
-<form action="index.php" method="POST" class="form-horizontal" role="form">
-        <div class="form-group">
-            <legend>Login</legend>
-        </div>
+<div class="panel panel-primary">
+    <div class="panel-heading">Login</div>
+  <div class="panel-body">
+  
+        <form action="index.php" method="POST" class="form-horizontal" role="form">
+                <div class="form-group">
+                    <legend>Anmeldung zur Nachrichtenseite</legend>
+                </div>
+                
         
-   
- 
-   
-       <div class="form-group">
-           <label class="sr-only" for="">Username</label>
-           <input type="text" class="form-control" name="loginname" placeholder="Username">
-       </div>
-       <div class="form-group">
-           <label class="sr-only" for="">label</label>
-           <input type="password" class="form-control" name="loginpasswort" placeholder="Password">
-       </div>
-   
-       
-   
-       <button type="submit" class="btn btn-primary">Submit</button>
-       <a href="logout.php"></a>
-   </form>
+        
+        
+            <div class="form-group">
+                <label class="sr-only" for="">Username</label>
+                <input type="text" class="form-control" name="loginname" placeholder="Username">
+            </div>
+            <div class="form-group">
+                <label class="sr-only" for="">label</label>
+                <input type="password" class="form-control" name="loginpasswort" placeholder="Password">
+            </div>
+        
+            
+        
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <a href="logout.php"></a>
+        </form>
+</div>
 </div>
     
 </body>
