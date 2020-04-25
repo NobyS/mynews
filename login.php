@@ -32,7 +32,7 @@
        
    
        <button type="submit" class="btn btn-primary">Submit</button>
-       <a href="logout.php">≤</a>
+       <a href="logout.php"></a>
    </form>
 </div>
     
