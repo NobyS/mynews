@@ -9,7 +9,7 @@
     <style>
     form-group {
 
-        padding: 10px;
+        margin: 20px;
     }
 
 
