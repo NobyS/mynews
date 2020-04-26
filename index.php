@@ -147,6 +147,7 @@ foreach ($result->articles as $article) { ?>
     <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3"><a href="<?php echo $article->url?>" target=_blank><?php echo $article->title?></a> </div>       
     
 </div>
+<hr>
 <?php
 
 }
